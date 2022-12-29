@@ -6,4 +6,10 @@ export class UsersController {
   getUsers(): any {
     return [{ id: 0 }];
   }
+  @Get(":id")
+  getUserById(@Param("id") id: string): any {
+    return {
+      id,
+    };
+  }
 }
