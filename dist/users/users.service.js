@@ -9,6 +9,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.UsersService = void 0;
 const common_1 = require("@nestjs/common");
 let UsersService = class UsersService {
+    constructor() {
+        this.users = [{ id: 0, name: "Fachrul" }];
+    }
+    findAll() {
+        return this.users;
+    }
+    findById(userId) {
+        return this.users.find((user) => user.id === userId);
+    }
 };
 UsersService = __decorate([
     (0, common_1.Injectable)()
