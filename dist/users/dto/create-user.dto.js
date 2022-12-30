@@ -20,5 +20,19 @@ __decorate([
     (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
 ], CreateUserDTO.prototype, "name", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, class_validator_1.IsNotEmpty)(),
+    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsEmail)(),
+    __metadata("design:type", String)
+], CreateUserDTO.prototype, "email", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, class_validator_1.IsNotEmpty)(),
+    (0, class_validator_1.MinLength)(4),
+    (0, class_validator_1.MaxLength)(20),
+    __metadata("design:type", String)
+], CreateUserDTO.prototype, "password", void 0);
 exports.CreateUserDTO = CreateUserDTO;
 //# sourceMappingURL=create-user.dto.js.map
