@@ -1,9 +1,10 @@
 import { Injectable } from "@nestjs/common";
 import { CreateUserDTO } from "./dto/create-user.dto";
+import { User } from "./entities/user.entity";
 
 @Injectable()
 export class UsersService {
-  private users: any = [{ id: 0, name: "Fachrul" }];
+  private users: User[] = [{ id: 0, name: "Fachrul" }];
 
   findAll() {
     return this.users;
