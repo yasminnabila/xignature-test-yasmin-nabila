@@ -5,6 +5,6 @@ export declare class UsersController {
     private usersService;
     constructor(usersService: UsersService);
     getUsers(): User[];
-    getUserById(id: string): User;
+    getUserById(id: number): User;
     createUser(body: CreateUserDTO): User;
 }
