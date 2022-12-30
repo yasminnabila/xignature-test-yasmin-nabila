@@ -18,8 +18,8 @@ let UsersService = class UsersService {
     findById(userId) {
         return this.users.find((user) => user.id === userId);
     }
-    createUser(name) {
-        const newUser = { id: Date.now(), name };
+    createUser(createUserDto) {
+        const newUser = Object.assign({ id: Date.now() }, createUserDto);
         this.users.push(newUser);
         return newUser;
     }
