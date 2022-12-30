@@ -8,6 +8,7 @@ import {
   Post,
 } from "@nestjs/common";
 import {
+  ApiBadRequestResponse,
   ApiCreatedResponse,
   ApiNotFoundResponse,
   ApiOkResponse,
@@ -45,6 +46,7 @@ export class UsersController {
     type: User,
     description: "User is created successfully",
   })
+  @ApiBadRequestResponse()
   @Post()
   createUser(@Body() body: CreateUserDTO): User {
     return this.usersService.createUser(body);

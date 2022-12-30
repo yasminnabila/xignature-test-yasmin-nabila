@@ -57,6 +57,7 @@ __decorate([
         type: user_entity_1.User,
         description: "User is created successfully",
     }),
+    (0, swagger_1.ApiBadRequestResponse)(),
     (0, common_1.Post)(),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
