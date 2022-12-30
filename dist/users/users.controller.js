@@ -26,7 +26,11 @@ let UsersController = class UsersController {
         return this.usersService.findAll();
     }
     getUserById(id) {
-        return this.usersService.findById(Number(id));
+        const user = this.usersService.findById(Number(id));
+        if (!user) {
+            throw new common_1.NotFoundException();
+        }
+        return user;
     }
     createUser(body) {
         return this.usersService.createUser(body);
@@ -41,6 +45,7 @@ __decorate([
 ], UsersController.prototype, "getUsers", null);
 __decorate([
     (0, swagger_1.ApiOkResponse)({ type: user_entity_1.User }),
+    (0, swagger_1.ApiNotFoundResponse)(),
     (0, common_1.Get)(":id"),
     __param(0, (0, common_1.Param)("id")),
     __metadata("design:type", Function),
