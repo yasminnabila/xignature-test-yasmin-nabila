@@ -14,6 +14,7 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UsersController = void 0;
 const common_1 = require("@nestjs/common");
+const swagger_1 = require("@nestjs/swagger");
 const create_user_dto_1 = require("./dto/create-user.dto");
 const user_entity_1 = require("./entities/user.entity");
 const users_service_1 = require("./users.service");
@@ -32,12 +33,14 @@ let UsersController = class UsersController {
     }
 };
 __decorate([
+    (0, swagger_1.ApiOkResponse)({ type: user_entity_1.User, isArray: true }),
     (0, common_1.Get)(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Array)
 ], UsersController.prototype, "getUsers", null);
 __decorate([
+    (0, swagger_1.ApiOkResponse)({ type: user_entity_1.User }),
     (0, common_1.Get)(":id"),
     __param(0, (0, common_1.Param)("id")),
     __metadata("design:type", Function),
@@ -45,6 +48,10 @@ __decorate([
     __metadata("design:returntype", user_entity_1.User)
 ], UsersController.prototype, "getUserById", null);
 __decorate([
+    (0, swagger_1.ApiCreatedResponse)({
+        type: user_entity_1.User,
+        description: "User is created successfully",
+    }),
     (0, common_1.Post)(),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
@@ -52,6 +59,7 @@ __decorate([
     __metadata("design:returntype", user_entity_1.User)
 ], UsersController.prototype, "createUser", null);
 UsersController = __decorate([
+    (0, swagger_1.ApiTags)("users"),
     (0, common_1.Controller)("users"),
     __metadata("design:paramtypes", [users_service_1.UsersService])
 ], UsersController);
