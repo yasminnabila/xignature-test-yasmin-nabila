@@ -3,7 +3,7 @@ import { SqliteConnectionOptions } from "typeorm/driver/sqlite/SqliteConnectionO
 const config: SqliteConnectionOptions = {
   type: "sqlite",
   database: "xignature_db",
-  entities: ["dist/src/**/*.entity.ts"],
+  entities: ["dist/src/**/*.entity.js"],
   synchronize: true,
 };
 

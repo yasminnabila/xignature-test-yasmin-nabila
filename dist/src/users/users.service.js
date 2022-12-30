@@ -10,7 +10,7 @@ exports.UsersService = void 0;
 const common_1 = require("@nestjs/common");
 let UsersService = class UsersService {
     constructor() {
-        this.users = [{ id: 0, name: "Fachrul" }];
+        this.users = [];
     }
     findAll() {
         return this.users;
