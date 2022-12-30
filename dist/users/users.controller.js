@@ -16,16 +16,14 @@ exports.UsersController = void 0;
 const common_1 = require("@nestjs/common");
 const users_service_1 = require("./users.service");
 let UsersController = class UsersController {
-    constructor(userService) {
-        this.userService = userService;
+    constructor(usersService) {
+        this.usersService = usersService;
     }
     getUsers() {
-        return [{ id: 0 }];
+        return this.usersService.findAll();
     }
     getUserById(id) {
-        return {
-            id,
-        };
+        return this.usersService.findById(Number(id));
     }
 };
 __decorate([

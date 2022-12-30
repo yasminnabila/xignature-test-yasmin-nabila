@@ -3,16 +3,15 @@ import { UsersService } from "./users.service";
 
 @Controller("users")
 export class UsersController {
-  constructor(private userService: UsersService) {}
+  constructor(private usersService: UsersService) {}
 
   @Get()
   getUsers(): any {
-    return [{ id: 0 }];
+    return this.usersService.findAll();
   }
   @Get(":id")
   getUserById(@Param("id") id: string): any {
-    return {
-      id,
-    };
+    //? TODO: Auto parse id
+    return this.usersService.findById(Number(id));
   }
 }
