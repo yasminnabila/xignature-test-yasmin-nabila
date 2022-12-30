@@ -18,6 +18,11 @@ let UsersService = class UsersService {
     findById(userId) {
         return this.users.find((user) => user.id === userId);
     }
+    createUser(name) {
+        const newUser = { id: Date.now(), name };
+        this.users.push(newUser);
+        return newUser;
+    }
 };
 UsersService = __decorate([
     (0, common_1.Injectable)()
