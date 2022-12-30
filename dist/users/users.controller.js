@@ -33,12 +33,14 @@ let UsersController = class UsersController {
     }
 };
 __decorate([
+    (0, swagger_1.ApiOkResponse)({ type: user_entity_1.User, isArray: true }),
     (0, common_1.Get)(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Array)
 ], UsersController.prototype, "getUsers", null);
 __decorate([
+    (0, swagger_1.ApiOkResponse)({ type: user_entity_1.User }),
     (0, common_1.Get)(":id"),
     __param(0, (0, common_1.Param)("id")),
     __metadata("design:type", Function),
@@ -46,6 +48,7 @@ __decorate([
     __metadata("design:returntype", user_entity_1.User)
 ], UsersController.prototype, "getUserById", null);
 __decorate([
+    (0, swagger_1.ApiCreatedResponse)({ type: user_entity_1.User }),
     (0, common_1.Post)(),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),

@@ -6,9 +6,6 @@ export declare class UsersService {
     findById(userId: number): User;
     createUser(createUserDto: CreateUserDTO): {
         name: string;
-        email: string;
-        password: string;
-        age: number;
         id: number;
     };
 }
