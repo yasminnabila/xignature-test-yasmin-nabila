@@ -25,6 +25,9 @@ let UsersController = class UsersController {
     getUserById(id) {
         return this.usersService.findById(Number(id));
     }
+    createUser(body) {
+        return this.usersService.createUser();
+    }
 };
 __decorate([
     (0, common_1.Get)(),
@@ -39,6 +42,13 @@ __decorate([
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Object)
 ], UsersController.prototype, "getUserById", null);
+__decorate([
+    (0, common_1.Post)(),
+    __param(0, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Object)
+], UsersController.prototype, "createUser", null);
 UsersController = __decorate([
     (0, common_1.Controller)("users"),
     __metadata("design:paramtypes", [users_service_1.UsersService])

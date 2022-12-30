@@ -4,4 +4,5 @@ export declare class UsersController {
     constructor(usersService: UsersService);
     getUsers(): any;
     getUserById(id: string): any;
+    createUser(body: any): any;
 }

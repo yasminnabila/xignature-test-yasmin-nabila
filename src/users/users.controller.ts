@@ -1,4 +1,4 @@
-import { Controller, Get, Param } from "@nestjs/common";
+import { Body, Controller, Get, Param, Post } from "@nestjs/common";
 import { UsersService } from "./users.service";
 
 @Controller("users")
@@ -13,5 +13,10 @@ export class UsersController {
   getUserById(@Param("id") id: string): any {
     //? TODO: Auto parse id
     return this.usersService.findById(Number(id));
+  }
+
+  @Post()
+  createUser(@Body() body: any): any {
+    return this.usersService.createUser();
   }
 }
