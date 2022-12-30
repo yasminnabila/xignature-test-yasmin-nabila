@@ -6,26 +6,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UsersService = void 0;
+exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
-let UsersService = class UsersService {
-    constructor() {
-        this.users = [{ id: 0, name: "Fachrul" }];
-    }
-    findAll() {
-        return this.users;
-    }
-    findById(userId) {
-        return this.users.find((user) => user.id === userId);
-    }
-    createUser(createUserDto) {
-        const newUser = Object.assign({ id: Date.now() }, createUserDto);
-        this.users.push(newUser);
-        return newUser;
-    }
+const typeorm_1 = require("@nestjs/typeorm");
+const app_controller_1 = require("./app.controller");
+const app_service_1 = require("./app.service");
+const users_module_1 = require("./users/users.module");
+const orm_config_1 = require("../orm.config");
+let AppModule = class AppModule {
 };
-UsersService = __decorate([
-    (0, common_1.Injectable)()
-], UsersService);
-exports.UsersService = UsersService;
-//# sourceMappingURL=users.service.js.map
+AppModule = __decorate([
+    (0, common_1.Module)({
+        imports: [users_module_1.UsersModule, typeorm_1.TypeOrmModule.forRoot(orm_config_1.default)],
+        controllers: [app_controller_1.AppController],
+        providers: [app_service_1.AppService],
+    })
+], AppModule);
+exports.AppModule = AppModule;
+//# sourceMappingURL=app.module.js.map
