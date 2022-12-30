@@ -10,6 +10,8 @@ async function bootstrap() {
         .setDescription("Description of the API")
         .setVersion("1.0")
         .build();
+    const document = swagger_1.SwaggerModule.createDocument(app, config);
+    swagger_1.SwaggerModule.setup("/", app, document);
     await app.listen(3000);
 }
 bootstrap();
