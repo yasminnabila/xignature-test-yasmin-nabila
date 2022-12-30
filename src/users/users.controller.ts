@@ -22,7 +22,10 @@ export class UsersController {
     return this.usersService.findById(Number(id));
   }
 
-  @ApiCreatedResponse({ type: User })
+  @ApiCreatedResponse({
+    type: User,
+    description: "User is created successfully",
+  })
   @Post()
   createUser(@Body() body: CreateUserDTO): User {
     return this.usersService.createUser(body);
