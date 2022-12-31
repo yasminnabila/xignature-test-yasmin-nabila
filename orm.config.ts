@@ -5,6 +5,7 @@ const config: SqliteConnectionOptions = {
   database: "xignature_db",
   entities: ["dist/src/**/*.entity.js"],
   synchronize: true,
+  migrations: ["dist/src/xignature_db/*.js"],
 };
 
 export default config;
