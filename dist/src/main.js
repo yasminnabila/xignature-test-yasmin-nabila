@@ -12,7 +12,7 @@ async function bootstrap() {
         secret: "keyboard cat",
         resave: false,
         saveUninitialized: true,
-        cookie: { secure: true },
+        cookie: { maxAge: 36000000 },
     }));
     app.use(passport.initialize());
     app.use(passport.session());
