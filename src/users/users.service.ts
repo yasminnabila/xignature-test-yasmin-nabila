@@ -4,7 +4,20 @@ import { User } from "./entities/user.entity";
 
 @Injectable()
 export class UsersService {
-  private users: User[] = [];
+  private readonly users: User[] = [
+    {
+      id: 1,
+      name: "Fachrul",
+      email: "fachrul@gmail.com",
+      password: "topsecretpassword",
+    },
+    {
+      id: 2,
+      name: "Fadhyl",
+      email: "fadhyl@gmail.com",
+      password: "verysecurepassword",
+    },
+  ];
 
   findAll() {
     return this.users;

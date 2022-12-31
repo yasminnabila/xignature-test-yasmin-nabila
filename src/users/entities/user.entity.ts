@@ -4,18 +4,18 @@ import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 @Entity()
 export class User {
   @PrimaryGeneratedColumn()
-  // @ApiProperty()
+  @ApiProperty()
   id: number;
 
   @Column()
-  // @ApiProperty()
+  @ApiProperty()
   name: string;
 
   @Column()
-  // @ApiProperty()
+  @ApiProperty()
   email: string;
 
   @Column()
-  // @ApiProperty()
+  @ApiProperty()
   password: string;
 }

@@ -16,12 +16,21 @@ let AppController = class AppController {
     constructor(appService) {
         this.appService = appService;
     }
+    login() {
+        return {};
+    }
     getHello() {
         return this.appService.getHello();
     }
 };
 __decorate([
-    (0, common_1.Get)(),
+    (0, common_1.Post)("login"),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Object)
+], AppController.prototype, "login", null);
+__decorate([
+    (0, common_1.Get)("protected"),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", String)
