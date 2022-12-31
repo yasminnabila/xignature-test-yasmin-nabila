@@ -23,8 +23,8 @@ let AppController = class AppController {
     login(req) {
         return req.user;
     }
-    getHello() {
-        return this.appService.getHello();
+    getHello(req) {
+        return req.user;
     }
 };
 __decorate([
@@ -37,8 +37,9 @@ __decorate([
 ], AppController.prototype, "login", null);
 __decorate([
     (0, common_1.Get)("protected"),
+    __param(0, (0, common_1.Request)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
+    __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", String)
 ], AppController.prototype, "getHello", null);
 AppController = __decorate([

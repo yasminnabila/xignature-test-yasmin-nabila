@@ -15,7 +15,7 @@ export class AppController {
 
   //? GET /protected
   @Get("protected")
-  getHello(): string {
-    return this.appService.getHello();
+  getHello(@Request() req): string {
+    return req.user;
   }
 }

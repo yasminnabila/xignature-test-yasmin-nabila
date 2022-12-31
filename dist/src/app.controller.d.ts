@@ -3,5 +3,5 @@ export declare class AppController {
     private readonly appService;
     constructor(appService: AppService);
     login(req: any): any;
-    getHello(): string;
+    getHello(req: any): string;
 }
