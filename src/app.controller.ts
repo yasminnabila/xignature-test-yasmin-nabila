@@ -10,12 +10,13 @@ export class AppController {
   @UseGuards(LocalAuthGuard)
   @Post("login")
   login(@Request() req): any {
-    return { msg: "Logged in!" };
+    return { msg: "Logged in!" }; //? TODO: return JWT access token
   }
 
   @UseGuards(AuthenticatedGuard)
   @Get("protected")
   getHello(@Request() req): string {
+    //? TODO: require a token, validate token
     return req.user;
   }
 }
