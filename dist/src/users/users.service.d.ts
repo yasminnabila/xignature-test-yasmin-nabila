@@ -3,9 +3,10 @@ import { User } from "./entities/user.entity";
 export declare class UsersService {
     private readonly users;
     findAll(): User[];
+    findOne(username: string): User;
     findById(userId: number): User;
     createUser(createUserDto: CreateUserDTO): {
-        name: string;
+        username: string;
         email: string;
         password: string;
         id: number;

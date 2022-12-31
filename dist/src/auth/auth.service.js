@@ -16,6 +16,13 @@ let AuthService = class AuthService {
     constructor(usersService) {
         this.usersService = usersService;
     }
+    async validateUser(username, password) {
+        const user = await this.usersService.findOne(username);
+        if (user && user.password === password) {
+            return user;
+        }
+        return null;
+    }
 };
 AuthService = __decorate([
     (0, common_1.Injectable)(),
