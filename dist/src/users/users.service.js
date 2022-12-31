@@ -28,6 +28,9 @@ let UsersService = class UsersService {
     findAll() {
         return this.users;
     }
+    findOne(username) {
+        return this.users.find((user) => user.username === username);
+    }
     findById(userId) {
         return this.users.find((user) => user.id === userId);
     }

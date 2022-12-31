@@ -23,6 +23,10 @@ export class UsersService {
     return this.users;
   }
 
+  findOne(username: string): User {
+    return this.users.find((user) => user.username === username);
+  }
+
   findById(userId: number) {
     return this.users.find((user) => user.id === userId);
   }
