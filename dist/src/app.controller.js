@@ -22,7 +22,7 @@ let AppController = class AppController {
         this.appService = appService;
     }
     login(req) {
-        return req.user;
+        return { msg: "Logged in!" };
     }
     getHello(req) {
         return req.user;
