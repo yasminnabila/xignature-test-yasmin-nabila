@@ -13,13 +13,13 @@ let UsersService = class UsersService {
         this.users = [
             {
                 id: 1,
-                name: "Fachrul",
+                username: "Fachrul",
                 email: "fachrul@gmail.com",
                 password: "topsecretpassword",
             },
             {
                 id: 2,
-                name: "Fadhyl",
+                username: "Fadhyl",
                 email: "fadhyl@gmail.com",
                 password: "verysecurepassword",
             },
