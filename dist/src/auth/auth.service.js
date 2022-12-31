@@ -8,13 +8,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AuthService = void 0;
 const common_1 = require("@nestjs/common");
 const users_service_1 = require("../users/users.service");
 let AuthService = class AuthService {
-    constructor(usersService) {
+    constructor(usersService, jwtService) {
         this.usersService = usersService;
+        this.jwtService = jwtService;
     }
     async validateUser(username, password) {
         const user = await this.usersService.findOne(username);
@@ -26,7 +28,7 @@ let AuthService = class AuthService {
 };
 AuthService = __decorate([
     (0, common_1.Injectable)(),
-    __metadata("design:paramtypes", [users_service_1.UsersService])
+    __metadata("design:paramtypes", [users_service_1.UsersService, typeof (_a = typeof JwtService !== "undefined" && JwtService) === "function" ? _a : Object])
 ], AuthService);
 exports.AuthService = AuthService;
 //# sourceMappingURL=auth.service.js.map
